@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">What\'s Cooking</string>
+    <string name="error_message">Unable to Load Data</string>
+    <string name="content_des_meal_image">Image of the Meal</string>
+    <string name="ingredients_title">"Ingredients: "</string>
+    <string name="instructions_title">"Instructions: "</string>
+    <string name="content_des_fav_btn">Favorite button</string>
+    <string name="play_video_link">Play Video</string>
+    <string name="filter_results">Filter</string>
+    <string name="show_favorites">Favorites</string>
+
+    <string name="KEY_ID">id</string>
+    <string name="SEARCH_ID">search_item</string>
+    <string name="show_main">Main</string>
+    <string name="favorites_title">Your Favorites</string>
+    <string name="maps">Map</string>
+    <string name="filter_search">Search by Ingredient</string>
+    <string name="KEY_INGREDIENT">ingredient</string>
+    <string name="text_bg">Background for text</string>
+    <string name="action_search">Search</string>
+    <string name="no_results">No Search Results Available</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="MEAL_PREFS">mealPrefs</string>
+    <string name="MEAL_NAME_PREFS">mealNamePrefs</string>
+    <string name="MEAL_INGREDIENT_PREFS">mealIngredientPrefs</string>
+    <string name="no_favorites">No Favorites</string>
+</resources>

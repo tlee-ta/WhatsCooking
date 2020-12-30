@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_meal"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/content_des_meal_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btn_favorite"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/content_des_fav_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_meal" />
+
+            <TextView
+                android:id="@+id/tv_ingredients_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/ingredients_title"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_favorite"
+                app:layout_constraintEnd_toStartOf="@+id/btn_favorite"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@id/tv_ingredients_title"
+                app:layout_constraintTop_toBottomOf="@+id/btn_favorite" />
+
+            <TextView
+                android:id="@+id/tv_instructions_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/instructions_title"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_play_video"
+                app:layout_constraintEnd_toStartOf="@+id/iv_play_video"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_play_video" />
+
+            <TextView
+                android:id="@+id/tv_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@id/tv_instructions_title"
+                app:layout_constraintTop_toBottomOf="@+id/iv_play_video" />
+
+            <ImageView
+                android:id="@+id/iv_play_video"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:contentDescription="@string/play_video_link"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ingredients"
+                app:srcCompat="@drawable/play_icon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_error_message"
+            android:text="@string/error_message"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
+
+        <ProgressBar
+            android:id="@+id/loading_bar"
+            android:layout_height="42dp"
+            android:layout_width="42dp"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+    </FrameLayout>
+</ScrollView>
+</layout>
