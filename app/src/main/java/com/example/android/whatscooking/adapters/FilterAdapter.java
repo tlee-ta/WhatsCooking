@@ -10,20 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.whatscooking.R;
-import com.example.android.whatscooking.model.Ingredient;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FilterAdapter extends RecyclerView.Adapter {
 
-    private List<Ingredient> ingredientDataList;
-    private List<Ingredient> ingredientFilterList = new ArrayList<>();
+    private List<String> dataList;
+    private List<String> filterList = new ArrayList<>();
     int counter = 0;
 
     public interface OnItemCheckListener {
-        void onItemCheck(Ingredient item);
-        void onItemUncheck(Ingredient item);
+        void onItemCheck(String item);
+        void onItemUncheck(String item);
     }
 
     private OnItemCheckListener onItemClick;
@@ -58,7 +57,7 @@ public class FilterAdapter extends RecyclerView.Adapter {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(layoutId, parent, false);
 
-        ingredientFilterList.addAll(ingredientDataList);
+        filterList.addAll(dataList);
 
         return new FilterAdapter.FilterAdapterViewHolder(view);
     }
@@ -66,15 +65,15 @@ public class FilterAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof FilterAdapterViewHolder) {
-            final Ingredient currentIngredient = ingredientDataList.get(position);
-            ((FilterAdapterViewHolder) holder).checkbox.setText(currentIngredient.getName());
+            final String currentItem = dataList.get(position);
+            ((FilterAdapterViewHolder) holder).checkbox.setText(currentItem);
             ((FilterAdapterViewHolder) holder).setOnClickListener(view -> {
                 ((FilterAdapterViewHolder) holder).checkbox.setChecked( !((FilterAdapterViewHolder) holder).checkbox.isChecked());
                 if (((FilterAdapterViewHolder) holder).checkbox.isChecked()) {
-                    onItemClick.onItemCheck(currentIngredient);
+                    onItemClick.onItemCheck(currentItem);
                 }
                 else {
-                    onItemClick.onItemUncheck(currentIngredient);
+                    onItemClick.onItemUncheck(currentItem);
                 }
             });
         }
@@ -98,28 +97,29 @@ public class FilterAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        if (null == ingredientDataList){
+        if (null == dataList){
             return 0;
         }
-        return ingredientDataList.size();
+        return dataList.size();
     }
 
-    public void setIngredientDataList(List<Ingredient> ingredientData) {
-        this.ingredientDataList = ingredientData;
-        ingredientFilterList.addAll(ingredientDataList);
+    public void setDataList(List<String> stringList) {
+        this.dataList = stringList;
+        filterList.addAll(dataList);
+        counter = 0;
         notifyDataSetChanged();
     }
 
     public void filter(String text) {
-        ingredientDataList.clear();
+        dataList = new ArrayList<>();
         if (text.isEmpty()) {
-            ingredientDataList.addAll(ingredientFilterList);
+            dataList.addAll(filterList);
         }
         else {
             text = text.toLowerCase();
-            for (Ingredient item: ingredientFilterList) {
-                if (item.getName().toLowerCase().contains(text)) {
-                    ingredientDataList.add(item);
+            for (String item: filterList) {
+                if (item.toLowerCase().contains(text)) {
+                    dataList.add(item);
                 }
             }
         }

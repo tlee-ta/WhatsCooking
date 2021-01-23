@@ -82,6 +82,8 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.MealAdapterVie
 
     public void setMealData(List<Meal> mealData) {
         mMealData = mealData;
-        notifyDataSetChanged();
+        if (mealData != null) {
+            notifyDataSetChanged();
+        }
     }
 }

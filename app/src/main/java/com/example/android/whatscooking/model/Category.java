@@ -4,12 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Ingredient implements Serializable {
+public class Category implements Serializable {
 
-    @SerializedName("strIngredient")
+    @SerializedName("strCategory")
     private String name;
 
-    public Ingredient(String name){
+    public Category(String name){
         this.name = name;
     }
 

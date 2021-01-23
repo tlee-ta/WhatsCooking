@@ -8,9 +8,22 @@
         app:showAsAction="always"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
-    <item
-        android:id="@+id/maps"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_map"
-        android:title="@string/maps"/>
+    <group>
+        <item android:id="@+id/category_search"
+            android:title="@string/search_category"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_category"/>
+
+        <item android:id="@+id/ingredient_search"
+            android:title="@string/search_ingredient"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_ingredient"
+            android:visible="false"/>
+
+        <item android:id="@+id/area_search"
+            android:title="@string/search_area"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_globe"/>
+    </group>
+
 </menu>

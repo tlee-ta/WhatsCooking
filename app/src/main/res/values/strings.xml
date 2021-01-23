@@ -11,10 +11,14 @@
 
     <string name="KEY_ID">id</string>
     <string name="SEARCH_ID">search_item</string>
+    <string name="KEY_ING_RESULTS">ingredient_results</string>
+    <string name="KEY_CAT_RESULTS">category_results</string>
+
     <string name="show_main">Main</string>
     <string name="favorites_title">Your Favorites</string>
     <string name="maps">Map</string>
-    <string name="filter_search">Search by Ingredient</string>
+    <string name="ingredient_search_title">Search by Ingredient</string>
+    <string name="category_search_title">Search by Category</string>
     <string name="KEY_INGREDIENT">ingredient</string>
     <string name="text_bg">Background for text</string>
     <string name="action_search">Search</string>
@@ -25,4 +29,13 @@
     <string name="MEAL_NAME_PREFS">mealNamePrefs</string>
     <string name="MEAL_INGREDIENT_PREFS">mealIngredientPrefs</string>
     <string name="no_favorites">No Favorites</string>
+    <string name="KEY_MEAL_RESULTS">meal_results</string>
+    <string name="KEY_CATEGORY">category</string>
+    <string name="search_category">Search Category</string>
+    <string name="search_ingredient">Search Ingredient</string>
+    <string name="KEY_AREA_RESULTS">area_results</string>
+    <string name="KEY_AREA">area</string>
+    <string name="search_area">Search Area</string>
+    <string name="area_search_title">Search by Area</string>
+    <string name="KEY_SEARCH">searching</string>
 </resources>
